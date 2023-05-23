@@ -20,7 +20,7 @@ const connectDb = async () => {
             '    name VARCHAR(255),\n' +
             '    data jsonb       \n' +
             ')')
-         console.log(res.rows[0])
+         console.log(res)
     } catch (error) {
         console.log(error)
     }

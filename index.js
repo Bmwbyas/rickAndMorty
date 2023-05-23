@@ -1,5 +1,5 @@
 const {Worker} = require('worker_threads')
-const {getData} = require("./src/assets/getData");
+const {getData} = require("./src/getData");
 const {connectDb} = require("./src/db");
 
 connectDb().then(() => {
@@ -13,7 +13,7 @@ connectDb().then(() => {
     const numThreads = 4;
     for (let i = 0; i < numThreads; i++) {
 
-        workers.push(new Worker('./src/worker/worker.js', {
+        workers.push(new Worker('./src/worker.js', {
             workerData: {
                 index: i,
             }
@@ -29,7 +29,6 @@ connectDb().then(() => {
             })
         })
     })
-    console.log('end script')
 })
 
 

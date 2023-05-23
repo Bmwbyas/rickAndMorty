@@ -1,5 +1,5 @@
 const {parentPort, workerData} = require('worker_threads');
-const {pool} = require("../db");
+const {pool} = require("./db");
 
 const {index} = workerData;
 parentPort.on('message', ({portionData}) => {

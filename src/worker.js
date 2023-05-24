@@ -10,7 +10,5 @@ parentPort.on('message', ({portionData}) => {
     for (let charter of portionData){
         pool.query(`INSERT INTO askerkoalexandr(name,data) values($1, $2) RETURNING *`, [charter.name,charter])
     }
-
-    // console.log(index+'   Data:'+portionData[0])
 });
 

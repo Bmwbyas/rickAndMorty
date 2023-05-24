@@ -25,7 +25,6 @@ connectDb().then(() => {
         data.forEach((d, index) => {
             workers[index % numThreads].postMessage({
                 portionData: d
-
             })
         })
     })
